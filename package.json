@@ -2,7 +2,7 @@
   "name": "crud_with_node",
   "version": "1.0.0",
   "description": "A CRUD application builded with node.js",
-  "main": "index.js",
+  "main": "./index.html",
   "scripts": {
     "dev": "nodemon index.js" 
   },
