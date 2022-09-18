@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vw;
   box-sizing: border-box;
-  font-family: "Syncopate", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(161, 161, 160);
 }
 
@@ -12,32 +12,93 @@ body {
 }
 
 .menu {
+  padding-top: 16px;
+  padding-bottom: 16px;
   width: 100%;
-  height: 100px;
+  height: 64px;
   display: flex;
   flex-direction: row;
-  background-color: aqua;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 32px;
+}
+
+.logo-title {
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo-subtitle {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btns {
+  height: 24px;
+  width: 64px;
+  display: flex;
+  justify-content: right;
+  
+}
+
+a {
   width: 32px;
+  height: 32px;
+}
+
+object {
+  
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(228, 225, 225);
 }
 
 @media only screen and (min-width: 1024px) {
-    
-  
+    .menu-btn {
+      display:none;
+    }
   
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .pages {
+    display: none;
+  }
 
-}
-  
+}  
 
 @media only screen and (max-width: 767px) {
   
   .pages {
     display: none;
+  }
+  
+  .menu-btn {
+    padding-left: 16px;
+    width: 64px;
+  }
+
+  .btns {
+    padding-right: 16px;
   }
 
 }
