@@ -1,7 +1,7 @@
 setInterval(() => {
     let today = new Date();
 
-    let month = today.getMonth()
+    let month = today.getMonth() + 1;
     
     let year = today.getFullYear();
 
