@@ -6,19 +6,19 @@ const server = express();
 server.use(express.json());
 
 const products = [
-    {
+    p1 = {
         name: "Light Sandwich",
         ingredients: ["bread", "lettuce", "onion", "eggs", "cheese", "cucumber","special sauce"],
         price: 2.5,
         image: url("./images/sandwich.jpg")
     },
-    {
+    p2 = {
         name: "Bread with Egg",
         ingredients: ["bread", "egg", "butter"],
         price: 1,
         image: url("./images/bread_with_egg.jpg")
     },
-    {
+    p3 = {
         name: "Shrimp Salad",
         ingredients: ["fried shrimp", "lettuce", "tomatoes", "bluberries", "arugula"],
         price: 1,
