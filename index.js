@@ -5,26 +5,7 @@ const server = express();
 
 server.use(express.json());
 
-const products = [
-    p1 = {
-        name: "Light Sandwich",
-        ingredients: ["bread", "lettuce", "onion", "eggs", "cheese", "cucumber","special sauce"],
-        price: 2.5,
-        image: url("./images/sandwich.jpg")
-    },
-    p2 = {
-        name: "Bread with Egg",
-        ingredients: ["bread", "egg", "butter"],
-        price: 1,
-        image: url("./images/bread_with_egg.jpg")
-    },
-    p3 = {
-        name: "Shrimp Salad",
-        ingredients: ["fried shrimp", "lettuce", "tomatoes", "bluberries", "arugula"],
-        price: 1,
-        image: url("./images/shrimp_salad.jpg")
-    }
-];
+const products = [];
 
 // getting a product
 server.get('/products/:index', (req, res) => {
@@ -65,3 +46,26 @@ server.delete('/products/:index', (req, res) => {
 })
 
 server.listen(3000);
+
+const p1 = {
+    name: "Light Sandwich",
+    ingredients: ["bread", "lettuce", "onion", "eggs", "cheese", "cucumber","special sauce"],
+    price: 2.5
+};
+
+const p2 = {
+    name: "Bread with Egg",
+    ingredients: ["bread", "egg", "butter"],
+    price: 1
+};
+
+
+const p3 = {
+    name: "Shrimp Salad",
+    ingredients: ["fried shrimp", "lettuce", "tomatoes", "bluberries", "arugula"],
+    price: 1
+}
+
+document.getElementById("p1-name").innerHTML = p1.name
+
+console.log("teste")
