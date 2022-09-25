@@ -23,6 +23,7 @@ body {
 .board {
   width:  95%;
   height: 95vh;
+  /*this is how you can put a border with gradient and radius*/
   border: double 1px transparent;
   border-radius: 25px;
   background-image:  linear-gradient(180deg, #02141C 0%, rgba(3, 50, 70, 1) 100%), radial-gradient(circle at top, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0));
