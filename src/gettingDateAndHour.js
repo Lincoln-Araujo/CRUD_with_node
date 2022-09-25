@@ -1,10 +1,21 @@
-setInterval(() => {
-    let today = new Date();
+/* Arrays of the days of the week and months */
+const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
-    let month = today.getMonth() + 1;
+const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+
+/* Getting the date and hour */
+const $hour = document.getElementById('current-hour');
+
+setInterval( () => {
     
-    let year = today.getFullYear();
+    let today = new Date()
 
-    document.getElementById("today").innerHTML = 'Today ' + month + '/' + year;
+    $hour.innerText = timeAndDateConvert(today.getHours()) + ':' + timeAndDateConvert(today.getMinutes());
 
-});
+    document.querySelector('.day-of-the-week').innerHTML = weekDays[today.getDay()];
+
+    document.getElementById('today').innerHTML = today.getDate() + ' de ' + months[today.getMonth()] + ', ' + today.getFullYear();
+    
+
+}, 500)
