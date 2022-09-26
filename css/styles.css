@@ -89,10 +89,66 @@ body {
     height: 80vh;
     display: flex;
     flex-direction: row;
+    align-items: start;
   }
   
   .note {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 274px;
+    height: 257px;
+    background-color: #F95A5A;
+    border-radius: 20px;
+    margin: 32px 32px;
+    color: black;
+  }
+
+  .edition-buttons {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  #edit-button {
+    width: 50%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px 0px 0px 0px;    
+    cursor: pointer;
+  }
+
+  #delete-button {
+    width: 50%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0px 20px 0px 0px;  
+    cursor: pointer;
+  }
+
+  #note-text {
+    width: 231px;
+    height: 166px;
+    margin-top: 24px;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  #edit-button:hover, #edit-button:active, #delete-button:hover, #delete-button:active {
+   
   }
   
   .add-field {
@@ -178,6 +234,13 @@ body {
 
     .notes {
         height: 70vh;
+        justify-content: center;
+      }
+
+      .note {
+   
+        margin-left: 16px;
+        margin-top: 16px;
       }
 
       .text-add-btn {
