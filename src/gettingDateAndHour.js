@@ -5,17 +5,29 @@ const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Jul
 
 
 /* Getting the date and hour */
-const $hour = document.getElementById('current-hour');
+
+const $date = document.querySelector('#today');
+
+const $dayWeek = document.querySelector('#day-of-the-week');
+
+const $currentHour = document.querySelector('#current-hour');
+
+function timeConvert(element) {
+    if (element < 10) {
+        element = '0' + element
+    }
+
+    return element
+}
 
 setInterval( () => {
-    
-    let today = new Date()
 
-    $hour.innerText = timeAndDateConvert(today.getHours()) + ':' + timeAndDateConvert(today.getMinutes());
+    const today = new Date();
 
-    document.querySelector('.day-of-the-week').innerHTML = weekDays[today.getDay()];
+    $date.innerHTML = today.getDate() + ' de ' + months[today.getMonth()] + ', ' + today.getFullYear();
 
-    document.getElementById('today').innerHTML = today.getDate() + ' de ' + months[today.getMonth()] + ', ' + today.getFullYear();
-    
+    $dayWeek.innerHTML = weekDays[today.getDay()];    
 
-}, 500)
+    $currentHour.innerText = today.getHours() + ':' + timeConvert(today.getMinutes());    
+
+}, 500);
