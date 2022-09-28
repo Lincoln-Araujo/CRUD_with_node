@@ -1,71 +1,59 @@
-const express = require('express');
-const { url } = require('inspector');
+import express, { json } from 'express';
+import { url } from 'inspector';
 
 const server = express();
 
-server.use(express.json());
+server.use(json());
 
-const products = [];
+const notes = [];
+
+function  addNote () { 
+    document.addEventListener('DOMContentLoaded', function() {
+        let div = document.createElement('div');
+        div.id = 'note-' + notes.length.toString;
+        div.innerHTML = '';
+        div.className = 'note';
+    
+        document.notes.appendChild(div);
+    }, false);
+}
 
 // getting a product
-server.get('/products/:index', (req, res) => {
+server.get('/notes/:index', (req, res) => {
     const { index } = req.params;
     
-    return res.json(products[index]);
+    return res.json(notes[index]);
 });
 
-// getting all products
-server.get('/products', (req, res) => {
-    return res.json(products);
+// getting all notes
+server.get('/notes', (req, res) => {
+    return res.json(notes);
 });
 
 // creating a new product
-server.post('/products', (req, res) => {
+server.post('/notes', (req, res) => {
     const { name } = req.body;
-    products.push(name);
+    notes.push(name);
 
-    return res.json(products);
+    return res.json(notes);
 });
 
 // updating a product
-server.put('/products/:index', (req, res) => {
+server.put('/notes/:index', (req, res) => {
     const { index } = req.params;
     const { name } = req.body;
 
-    products[index] = name;
+    notes[index] = name;
 
-    return res.json(products);
+    return res.json(notes);
 });
 
 // deleting a product
-server.delete('/products/:index', (req, res) => {
+server.delete('/notes/:index', (req, res) => {
     const { index } = req.params;
 
-    products.splice(index, 1);
+    notes.splice(index, 1);
     return res.json({ message: 'item removed'});
 })
 
 server.listen(3000);
-
-const p1 = {
-    name: "Light Sandwich",
-    ingredients: ["bread", "lettuce", "onion", "eggs", "cheese", "cucumber","special sauce"],
-    price: 2.5
-};
-
-const p2 = {
-    name: "Bread with Egg",
-    ingredients: ["bread", "egg", "butter"],
-    price: 1
-};
-
-
-const p3 = {
-    name: "Shrimp Salad",
-    ingredients: ["fried shrimp", "lettuce", "tomatoes", "bluberries", "arugula"],
-    price: 1
-}
-
-document.getElementById("p1-name").innerHTML = p1.name
-
-console.log("teste")
