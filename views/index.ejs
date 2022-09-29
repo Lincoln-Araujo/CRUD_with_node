@@ -67,6 +67,31 @@
 
                 </div>
 
+                <!-- The form -->
+                <div 
+                    class="form-popup" 
+                    id="myForm">
+
+                    <div class="form-background"></div>
+
+                    <form 
+                        action="/create" 
+                        class="form-container">
+
+                        <input 
+                            type="text" 
+                            placeholder="Qual sua tarefa pra hoje?" 
+                            id="task" 
+                            name="task" 
+                            required>
+                    
+                        <button type="submit" class="btn" id="addButton">Confirmar</button>
+                        <button type="button" class="btn x cancel" onclick="closeForm()">Close</button>
+
+                    </form>
+
+                </div>
+
                 <div class="notes">
 
                     <div class="note">
@@ -95,7 +120,7 @@
                         Adicione novas tarefas
                     </span>
 
-                    <div class="image-btn" onclick={addNote}>
+                    <div class="image-btn" onclick="openForm()">
                         <img 
                             src="./images/plus-icon.png" 
                             alt="plus icon"

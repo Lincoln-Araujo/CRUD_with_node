@@ -6,6 +6,15 @@ const deleteButton = document.getElementById('delete-button');
 
 const note = document.getElementsByClassName('note');
 
+// Form functions
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+  
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
 /* Arrays of the days of the week and months */
 const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
