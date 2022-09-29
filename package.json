@@ -1,13 +1,16 @@
 {
   "name": "crud_with_node",
   "version": "1.0.0",
-  "description": "A CRUD application builded with node.js",
-  "main": "./index.html",
+  "description": "A ToDo list builded with node.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js" 
+    "start": "node index"
   },
-  "repository": "git+https://github.com/Lincoln-Araujo/CRUD_with_node.git",
-  "author": "Lincoln Araujo <lincoln.fa@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lincoln-Araujo/CRUD_with_node.git"
+  },
+  "author": "Lincoln Araujo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Lincoln-Araujo/CRUD_with_node/issues"
@@ -15,8 +18,5 @@
   "homepage": "https://github.com/Lincoln-Araujo/CRUD_with_node#readme",
   "dependencies": {
     "express": "^4.18.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }
