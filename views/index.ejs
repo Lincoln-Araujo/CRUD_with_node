@@ -42,6 +42,8 @@
         <div class="container">
 
             <div class="transparent-background"></div>
+            
+            <div id="form-background" onclick={closeForm()}></div>
 
             <div class="board">
 
@@ -59,36 +61,9 @@
 
                         <div id="current-hour"></div>
 
-                    </div>
-
-                    
+                    </div>                    
 
                     <div class="line"></div>
-
-                </div>
-
-                <!-- The form -->
-                <div 
-                    class="form-popup" 
-                    id="myForm">
-
-                    <div class="form-background"></div>
-
-                    <form 
-                        action="/create" 
-                        class="form-container">
-
-                        <input 
-                            type="text" 
-                            placeholder="Qual sua tarefa pra hoje?" 
-                            id="task" 
-                            name="task" 
-                            required>
-                    
-                        <button type="submit" class="btn" id="addButton">Confirmar</button>
-                        <button type="button" class="btn x cancel" onclick="closeForm()">Close</button>
-
-                    </form>
 
                 </div>
 
@@ -108,7 +83,45 @@
 
                         </div>
 
-                        <span id="note-text"></span>
+                        <div id="note-text"></div>
+
+                    </div>
+
+                    <!-- The form -->
+                    <div 
+                        class="form-popup" 
+                        id="myForm">
+
+                        <form 
+                            action="/create" 
+                            class="form-container">
+
+                            <button 
+                                type="button" 
+                                class="btn x cancel" 
+                                >
+
+                                <div
+                                    alt="close icon"
+                                    id="close-button"
+                                    onclick="closeForm()">
+
+                            </button>
+
+                            <textarea
+                                id="task" 
+                                name="task"
+                                required>
+                            </textarea>
+                        
+                            <button 
+                                type="submit" 
+                                class="btn add-Button" 
+                                id="addButton">
+                                Confirmar
+                            </button>
+
+                        </form>
 
                     </div>
 

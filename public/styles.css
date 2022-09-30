@@ -31,6 +31,8 @@ body {
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
+
+  
   
   .board {
     position: absolute;
@@ -80,7 +82,7 @@ body {
   .line {
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: rgb(70, 97, 122);
     display: flex;
   }
   
@@ -92,10 +94,10 @@ body {
     align-items: start;
   }
   
-  .note {
-    display: none;
+  .note, .form-container  {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 274px;
     height: 257px;
     background-color: #F95A5A;
@@ -103,7 +105,8 @@ body {
     margin: 32px 32px;
     color: black;
     cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);   
+    
   }
 
   .note:hover, #plus-button:hover {
@@ -168,14 +171,14 @@ body {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
   }
 
-  #note-text {
-    width: 231px;
-    height: 166px;
-    margin-top: 24px;
+  #note-text, .form-container textarea{
+    width: 200px;
     font-family: 'Caveat', cursive;
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
+    margin: auto auto;
+    color: black;   
   }
 
   .add-field {
@@ -221,46 +224,105 @@ body {
 
   /* The popup form - hidden by default */
 .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+  display: none; 
 }
 
-/* Add styles to the form container */
+.form-popup {
+  position: absolute;
+  z-index: 2;
+  width: 274px;
+  height: 257px;
+}
+
 .form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+.form-container textarea{
   border: none;
-  background: #f1f1f1;
+  background-color: transparent;
+  height: 100vh;
+  float:left;
+  clear:left; 
+  resize: none;
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+.form-container textarea:focus {
+    outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
+  color:#eceaea;
+  padding: 16px;
   border: none;
-  cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+}
+
+.add-Button {
+  background-color: transparent;
+  border-radius: 0 0 20px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.add-Button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  -webkit-transition:all 100ms ease-in-out;
+	-moz-transition:all 100ms ease-in-out;
+	-o-transition:all 100ms ease-in-out;
+	transition:all 100ms ease-in-out;
+}
+
+.x, .cancel {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  border: none;
+  width: 100%;
+  height: 16px;
+  background-color: transparent;
+  margin-top: 8px;
+}
+
+#close-button {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;  
+  background-image: url('./images/close-icon.png'); 
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  
+}
+
+#close-button:hover {
+  background-image: url('./images/white-close-icon.png');
+  -webkit-transition:all 100ms ease-in-out;
+	-moz-transition:all 100ms ease-in-out;
+	-o-transition:all 100ms ease-in-out;
+	transition:all 100ms ease-in-out;
+}
+
+#form-background {
+  width:  100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  display:none;
+  position: absolute;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+textarea::placeholder {
+  color: rgb(0, 0, 0, 0.5);
+  width: 200px;
+
 }
   
   @media only screen and (max-width: 1024px) {
@@ -312,12 +374,12 @@ body {
     .notes {
         height: 70vh;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
 
-      .note {
-   
-        margin-left: 16px;
-        margin-top: 16px;
+      .note, .form-container {
+        margin: 8px 0;
       }
 
       .text-add-btn {

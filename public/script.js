@@ -6,13 +6,26 @@ const deleteButton = document.getElementById('delete-button');
 
 const note = document.getElementsByClassName('note');
 
+const task = document.getElementById('task');
+
 // Form functions
 function openForm() {
     document.getElementById("myForm").style.display = "block";
+    document.getElementById("form-background").style.display = "block";
+    task.placeholder = "Qual sua tarefa pra hoje?"
+    task.value = '';  
+
 }
+
+function clearPlaceholder() {
+    task.placeholder = '';
+}
+
+task.addEventListener("click", clearPlaceholder);
   
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
+    document.getElementById("form-background").style.display = "none";
 }
 
 /* Arrays of the days of the week and months */
