@@ -10,15 +10,16 @@ const task = document.getElementById('task');
 
 // Form functions
 function openForm() {
-    document.getElementById("myForm").style.display = "inline-block";
-    document.getElementById("form-background").style.display = "block";
+    document.getElementById("myForm").style.display = "flex";
+    document.getElementById("form-background").style.display = "flex";
     task.placeholder = "Qual sua tarefa pra hoje?"
     task.value = '';  
 }
 
 function editForm() {
-    document.getElementById("myForm").style.display = "inline-block";
-    document.getElementById("form-background").style.display = "block"; 
+    document.getElementById("myForm").style.display = "flex";
+
+    document.getElementById("form-background").style.display = "flex"; 
 }
 
 function clearPlaceholder() {

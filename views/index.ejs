@@ -67,51 +67,35 @@
 
                 </div>
 
-                <div class="notes">
+     
+                
+                <ul class="notes">
 
-                    <div class="note">
+                    <% tasksList.forEach((task) =>{ %>
+                        <li class="note">
+                            <div class="edition-buttons">
 
-                        <div class="edition-buttons">
-
-                            <span id="edit-button" onclick="editForm()">
-                                Editar
-                            </span>
-
-                            <span id="delete-button">
-                                Excluir
-                            </span>
-
-                        </div>
-
-                        <div id="note-text">sou um texto exemplo</div>
-
-                    </div>
-
-                    <div class="note">
-
-                        <div class="edition-buttons">
-
-                            <span id="edit-button" onclick="editForm()">
-                                Editar
-                            </span>
-
-                            <span id="delete-button">
-                                Excluir
-                            </span>
-
-                        </div>
-
-                        <div id="note-text">sou um texto exemplo</div>
-
-                    </div>
+                                <span id="edit-button" onclick="editForm()">
+                                    Editar
+                                </span>
+    
+                                <span id="delete-button">
+                                    Excluir
+                                </span>
+    
+                            </div>
+                            <%= task.task %>
+                        </li>
+                    <% }) %>
 
                     <!-- The form -->
-                    <div 
+                    <li 
                         class="form-popup" 
                         id="myForm">
 
                         <form 
                             action="/create" 
+                            method="post"
                             class="form-container">
 
                             <button 
@@ -140,10 +124,8 @@
                             </button>
 
                         </form>
-
-                    </div>
-
-                </div>
+                </ul>
+               
 
                 <div class="add-field">
 
