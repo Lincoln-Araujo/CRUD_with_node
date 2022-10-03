@@ -1,38 +1,3 @@
-const plusButton = document.getElementById('plus-button');
-
-const editButton = document.getElementById('edit-button');
-
-const deleteButton = document.getElementById('delete-button');
-
-const note = document.getElementsByClassName('note');
-
-const task = document.getElementById('task');
-
-// Form functions
-function openForm() {
-    document.getElementById("myForm").style.display = "flex";
-    document.getElementById("form-background").style.display = "flex";
-    task.placeholder = "Qual sua tarefa pra hoje?"
-    task.value = '';  
-}
-
-function editForm() {
-    document.getElementById("myForm").style.display = "flex";
-
-    document.getElementById("form-background").style.display = "flex"; 
-}
-
-function clearPlaceholder() {
-    task.placeholder = '';
-}
-
-task.addEventListener("click", clearPlaceholder);
-  
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    document.getElementById("form-background").style.display = "none";
-}
-
 /* Arrays of the days of the week and months */
 const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
@@ -66,3 +31,15 @@ setInterval( () => {
     $currentHour.innerText = today.getHours() + ':' + timeConvert(today.getMinutes());    
 
 }, 500);
+
+// close function
+const closeMessage = document.querySelector("#close-message");
+const message = document.querySelector(".message");
+
+closeMessage.addEventListener("click", () => {
+  message.style.display = "none";
+});
+
+setTimeout(() => {
+  
+}, 5000);

@@ -14,3 +14,4 @@ const connectToDb = () => {
 };
 
 module.exports = connectToDb;
+

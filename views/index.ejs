@@ -1,152 +1,81 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
-    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <title>To Do List</title>
+</head>
 
-        <meta charset="UTF-8">
+<body>
 
-        <meta 
-            http-equiv="X-UA-Compatible" 
-            content="IE=edge">
+    <div class="board">
 
-        <meta 
-            name="viewport" 
-            content="width=device-width, initial-scale=1.0">
+        <% if (message != "") {%>
+            <%- include('./components/messages', {message: message, type: type})  %>
+        <% } %>
+    
+        <header>
+    
+            <div class="date-field">
 
-        <link 
-            rel="stylesheet" 
-            href="styles.css">
+                <div class="date">
 
-        <link 
-            rel="preconnect" 
-            href="https://fonts.googleapis.com">
+                    <div id="today"></div>
 
-        <link 
-            rel="preconnect" 
-            href="https://fonts.gstatic.com" 
-            crossorigin>
+                    <div id="day-of-the-week"></div>
 
-        <link 
-            href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
-            rel="stylesheet">
+                </div>
 
-        <title>
-            CRUD WITH NODE.JS
-        </title>
-        
-    </head>
+                <div id="current-hour"></div>
 
-    <body>
-        
-        <div class="container">
+            </div>                    
 
-            <div class="transparent-background"></div>
+            <div class="line"></div>
             
-            <div id="form-background" onclick={closeForm()}></div>
-
-            <div class="board">
-
-                <div class="head-board">
-
-                    <div class="date-field">
-
-                        <div class="date">
-
-                            <div id="today"></div>
-
-                            <div id="day-of-the-week"></div>
-
-                        </div>
-
-                        <div id="current-hour"></div>
-
-                    </div>                    
-
-                    <div class="line"></div>
-
-                </div>
-
-     
-                
-                <ul class="notes">
-
-                    <% tasksList.forEach((task) =>{ %>
-                        <li class="note">
-                            <div class="edition-buttons">
-
-                                <span id="edit-button" onclick="editForm()">
-                                    Editar
-                                </span>
     
-                                <span id="delete-button">
-                                    Excluir
-                                </span>
+        </header>
     
-                            </div>
-                            <%= task.task %>
-                        </li>
-                    <% }) %>
-
-                    <!-- The form -->
-                    <li 
-                        class="form-popup" 
-                        id="myForm">
-
-                        <form 
-                            action="/create" 
-                            method="post"
-                            class="form-container">
-
-                            <button 
-                                type="button" 
-                                class="btn x cancel" 
-                                >
-
-                                <div
-                                    alt="close icon"
-                                    id="close-button"
-                                    onclick="closeForm()">
-
-                            </button>
-
-                            <textarea
-                                id="task" 
-                                name="task"
-                                required>
-                            </textarea>
+        <section id="tasks">
+            <ul>
+                <% tasksList.forEach((task)=>{ %>
+                    <li>
+                        <a href="/check/<%= task._id %>" class="check-<%= task.check %>"><%= task.task %></a>                       
                         
-                            <button 
-                                type="submit" 
-                                class="btn add-Button" 
-                                id="addButton">
-                                Confirmar
-                            </button>
+                         
+                        <div>
+                            <a class="btnUpdate" href="/getById/<%= task._id %>/update"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btnDelete" href="/getById/<%= task._id %>/delete"><i class="bi bi-trash"></i></a>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+            
+        </section>
 
-                        </form>
-                </ul>
-               
-
-                <div class="add-field">
-
-                    <span class="text-add-btn">
-                        Adicione novas tarefas
-                    </span>
-
-                    <div class="image-btn" onclick="openForm()">
-                        <img 
-                            src="./images/plus-icon.png" 
-                            alt="plus icon"
-                            id="plus-button">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <script src="script.js"></script>
-    </body>
+        <footer>
+            <% if (task==null) { %>
+                <%- include('./components/form', {action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
+            <% } else { %>
+                <%- include('./components/form', {action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
+            <% } %>
+        </footer>
     
+        <% if (taskDelete !=null) { %>
+            <%- include('./components/modalDel', {task: taskDelete})  %>
+        <% } %>
+
+    </div>
+
+    
+
+    <div class="background-board"></div>
+
+
+            <script src="script.js"></script>
+</body>
+
 </html>
