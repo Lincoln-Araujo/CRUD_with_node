@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Roboto, Arial;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -55,6 +55,10 @@ header {
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .date {
@@ -93,10 +97,6 @@ footer {
   position: absolute;
   width: 100%;
   left:0;
-}
-
-footer h1 {
-  padding-bottom: 3rem;
 }
 
 input {
@@ -154,11 +154,9 @@ ul li {
   height: 257px;
   position: relative;
   background-color: #F95A5A;
-  padding: 0.5rem;
   text-decoration: none;
   display: inline-block;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   font-size: 1.3rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); 
@@ -170,14 +168,6 @@ ul li {
 ul li a {
   text-decoration: none;
   color: #fff;
-  padding-left: 2rem;
-}
-
-ul li span {
-  color: #ccc;
-  font-style: italic;
-  font-size: 0.8rem;
-  padding-left: 1rem;
 }
 
 ul li div {
@@ -202,27 +192,50 @@ ul li:hover {
   transition:all 300ms ease-in-out; 
 }
 
-a.btnUpdate {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: #ccc;
-  transition: all 0.3s ease-in-out;
+.notation {
+  display: block;
+  margin: 16px 24px;
+  font-family: 'Caveat', cursive;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 35px;
+  color: #000000;
 }
 
-a.btnUpdate:hover {
-  background: #3643f4;
-  color: #fff;
+.edition-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+a.btnUpdate, a.btnDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0;
+  width: 137px;
+  height: 40px;
+  text-decoration: none;
+  color: rgb(231, 228, 228);
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+a.btnUpdate {
+  border-radius: 20px 0 0 0;
 }
 
 a.btnDelete {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: #ccc;
-  transition: all 0.3s ease-in-out;
+  border-radius: 0 20px 0 0
+}
+
+a.btnUpdate:hover {
+  background: #1da1c9;
+  color: rgb(255, 255, 255);
 }
 
 a.btnDelete:hover {
-  background: #f44336;
+  background: #f4c836;
   color: #fff;
 }
 
@@ -356,34 +369,7 @@ span#close-message:hover {
   color: rgb(255, 0, 0);
 }
 
-ul li.check-true{
-  background-color: #888888;
-  color: #fff;
-  text-decoration: line-through;
-}
 
-ul li a.check-true::before{
-  content: "";
-  position: absolute;
-  border: #fff solid;
-  top: 17px;
-  left: 16px;
-  height: 15px;
-  width: 7px;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-ul li a.check-false::before{
-  content: "";
-  position: absolute;
-  border: #fff solid;
-  top: 20px;
-  left: 16px;
-  height: 13px;
-  width: 13px;
-  border-width: 2px;
-}
 
 @media only screen and (max-width: 767px) {
 

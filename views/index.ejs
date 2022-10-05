@@ -43,13 +43,23 @@
             <ul>
                 <% tasksList.forEach((task)=>{ %>
                     <li>
-                        <a href="/check/<%= task._id %>" class="check-<%= task.check %>"><%= task.task %></a>                       
-                        
-                         
-                        <div>
-                            <a class="btnUpdate" href="/getById/<%= task._id %>/update"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btnDelete" href="/getById/<%= task._id %>/delete"><i class="bi bi-trash"></i></a>
+                        <div class="edititon-buttons">
+                            <a 
+                                class="btnUpdate" 
+                                href="/getById/<%= task._id %>/update">
+                                EDITAR
+                            </a>
+                            <a 
+                                class="btnDelete" 
+                                href="/getById/<%= task._id %>/delete">
+                                REMOVER
+                            </a>
                         </div>
+                        <a 
+                            href="/check/<%= task._id %>" 
+                            class="check-<%= task.check %> notation">
+                            <%= task.task %>
+                        </a>         
                     </li>
                 <% }) %>
             </ul>
