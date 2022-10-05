@@ -170,10 +170,12 @@ ul li a {
   color: #fff;
 }
 
-ul li div {
+.edition-buttons {
   display: flex;
   align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
+  visibility: hidden;
 }
 
 ul li:nth-child(odd) {
@@ -192,6 +194,11 @@ ul li:hover {
   transition:all 300ms ease-in-out; 
 }
 
+ul li:hover > .edition-buttons {
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
 .notation {
   display: block;
   margin: 16px 24px;
@@ -201,11 +208,6 @@ ul li:hover {
   font-size: 40px;
   line-height: 35px;
   color: #000000;
-}
-
-.edition-buttons {
-  display: flex;
-  flex-direction: row;
 }
 
 a.btnUpdate, a.btnDelete {
