@@ -1,7 +1,6 @@
 <div id="form-notes">
     <div class="background-form" onclick="closeForm()"></div>
     <form action="/<%= action %>" method="post">
-        <span id="text-add-btn">Adicionar tarefa</span>
         <div id="close-button" onclick="closeForm()"></div>
         <textarea name="task" id="task" placeholder="Insira uma tarefa" value="<%= value %>"></textarea>
         <button id="<%= idBtn %>" type="submit"><%= nameBtn %></button>    
