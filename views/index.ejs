@@ -12,6 +12,13 @@
 
 <body>
 
+    <!--Form-->
+    <% if (task==null) { %>
+        <%- include('./components/form', {action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
+    <% } else { %>
+        <%- include('./components/form', {action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
+    <% } %>
+
     <div class="board">
 
         <% if (message != "") {%>
@@ -66,14 +73,9 @@
             
         </section>
 
-        <footer>
-            <% if (task==null) { %>
-                <%- include('./components/form', {action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
-            <% } else { %>
-                <%- include('./components/form', {action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
-            <% } %>
-        </footer>
-    
+        <div class="open-form" onclick="openForm()"></div>
+      
+        <!--Delete confirmation-->
         <% if (taskDelete !=null) { %>
             <%- include('./components/modalDel', {task: taskDelete})  %>
         <% } %>

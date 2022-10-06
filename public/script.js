@@ -41,7 +41,17 @@ closeMessage.addEventListener("click", () => {
 });
 
 setTimeout(() => {
-  
-}, 5000);
+    message.style.display = "none";
+}, 3000);
 
-// 
+// form function
+
+function closeForm () {
+    document.getElementById("form-notes").style.display = "none";
+
+}
+
+function openForm () {
+    document.getElementById("form-notes").style.display = "flex";
+    document.getElementById("task").value ='';
+}
