@@ -48,10 +48,19 @@ setTimeout(() => {
 
 function closeForm () {
     document.getElementById("form-notes").style.display = "none";
-
+    
 }
 
 function openForm () {
     document.getElementById("form-notes").style.display = "flex";
     document.getElementById("task").value ='';
+    console.log("eu fui clicado")
 }
+
+// edit Form
+function closeEditForm () {
+    document.getElementById("form-edition").style.display = "none";
+    console.log("display alterado")
+}
+
+

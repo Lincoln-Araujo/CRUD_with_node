@@ -90,7 +90,7 @@ header {
   display: flex;
 }
 
-#form-notes {
+#form-notes, #form-edition {
   position: absolute;
   z-index: 3;
   margin: 0 auto;
@@ -211,7 +211,7 @@ ul li {
   margin: 24px 24px;
 }
 
-ul li a {
+ul li a, a.btnUpdate {
   text-decoration: none;
   color: #fff;
 }
@@ -271,6 +271,7 @@ a.btnUpdate, a.btnDelete {
 
 a.btnUpdate {
   border-radius: 20px 0 0 0;
+  cursor: pointer;
 }
 
 a.btnDelete {
@@ -426,6 +427,18 @@ span#close-message:hover {
   bottom: 24px;
   right: 24px;
   cursor: pointer;
+}
+
+.open-form:hover {
+  filter: drop-shadow(4px);
+  -webkit-transform:scale(1.2); 
+  -moz-transform:scale(1.2); 
+  -o-transform:scale(1.2);
+  transform:scale(1.2);
+  -webkit-transition:all 300ms ease-in-out;
+  -moz-transition:all 300ms ease-in-out;
+  -o-transition:all 300ms ease-in-out;
+  transition:all 300ms ease-in-out; 
 }
 
 @media only screen and (max-width: 767px) {

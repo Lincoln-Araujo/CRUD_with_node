@@ -16,10 +16,10 @@
     <% if (task==null) { %>
         <%- include('./components/form', {action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
     <% } else { %>
-        <%- include('./components/form', {action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
+        <%- include('./components/formEdition', {action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
     <% } %>
 
-    <div class="board">
+     <div class="board">
 
         <% if (message != "") {%>
             <%- include('./components/messages', {message: message, type: type})  %>
@@ -45,17 +45,18 @@
             
     
         </header>
-    
+     
         <section id="tasks">
             <ul>
                 <% tasksList.forEach((task)=>{ %>
                     <li>
                         <div class="edition-buttons">
-                            <a 
+                            <a                                
                                 class="btnUpdate" 
                                 href="/getById/<%= task._id %>/update">
                                 EDITAR
                             </a>
+                            
                             <a 
                                 class="btnDelete" 
                                 href="/getById/<%= task._id %>/delete">
@@ -73,7 +74,10 @@
             
         </section>
 
-        <div class="open-form" onclick="openForm()"></div>
+        <div 
+            class="open-form" 
+            onclick="openForm()">
+        </div>
       
         <!--Delete confirmation-->
         <% if (taskDelete !=null) { %>

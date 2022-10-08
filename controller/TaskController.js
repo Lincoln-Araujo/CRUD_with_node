@@ -42,6 +42,7 @@ const createTask = async (req, res) => {
 
 const getById = async (req, res) => {
   try {
+    
     const tasksList = await Task.find();
     if (req.params.method == "update") {
       const task = await Task.findOne({ _id: req.params.id });
@@ -56,8 +57,16 @@ const getById = async (req, res) => {
 };
 
 const updateOneTask = async (req, res) => {
+
+  const task = req.body;
+
+  if (!task.task) {
+    message = "Escreva algo. Sua tarefa não foi atualizada!";
+    type = "danger";
+    return res.redirect("/");
+  }
+  
   try {
-    const task = req.body;
     await Task.updateOne({ _id: req.params.id }, task);
     message = "Tarefa atualizada com sucesso!";
     type = "success";
