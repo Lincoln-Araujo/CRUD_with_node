@@ -91,21 +91,21 @@ header {
 }
 
 #form-notes, #form-edition {
-  position: absolute;
-  z-index: 3;
-  margin: 0 auto;
-  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
   display: none;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  height: auto;
+  align-items: center;
+  pointer-events: auto;
 }
 
 .background-form {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5) ;
   backdrop-filter: blur(2px);
 }
@@ -194,10 +194,9 @@ ul {
 ul li {
   width: 274px;
   height: 257px;
-  position: relative;
   background-color: #F95A5A;
   text-decoration: none;
-  display: inline-block;
+  display: inline-table;
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.3rem;
@@ -423,6 +422,7 @@ span#close-message:hover {
   bottom: 24px;
   right: 24px;
   cursor: pointer;
+  z-index: 5;
 }
 
 .open-form:hover {
@@ -452,5 +452,13 @@ span#close-message:hover {
     width: 32px;
     height: 32px;
   }  
+
+  .background-form {
+    background-size: contain;
+  }
+
+  ul li {   
+    position: relative;
+  }
 
 }
