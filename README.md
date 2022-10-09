@@ -2,8 +2,7 @@
 
 A CRUD system inspired in a todo list that counts with a date system and clock.
 
-![design preview](./public/images/presentation.png)
-
+<a href="https://my-tasks-lincoln.herokuapp.com/" target="_blank"><img src="./public/images/presentation.png" ></a>
 
 ## 🛠️ Technologies
 
