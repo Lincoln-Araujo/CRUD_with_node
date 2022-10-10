@@ -1,6 +1,6 @@
 # My Tasks
 
-A CRUD system inspired in a todo list that counts with a date system and clock.
+A CRUD system inspired by a to-do list that counts with a dating system and clock.
 
 <a href="https://my-tasks-lincoln.herokuapp.com/" target="_blank"><img src="./public/images/presentation.png" ></a>
 
